@@ -3,6 +3,8 @@ package com.cts.cloud.enablement.onlinesales1.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.cts.cloud.enablement.onlinesales1.domain.EventRegistration;
 import com.cts.cloud.enablement.onlinesales1.domain.EventSummary;
 
 /**
@@ -12,6 +14,8 @@ import com.cts.cloud.enablement.onlinesales1.domain.EventSummary;
 public interface EventSummaryRepository extends JpaRepository<EventSummary, Long> {
 	
 	EventSummary findByEventID(Long eventID);
+	
+	List<EventSummary> findAll();
 //	
 //	List<Event> findByIDs(List<Long> eventIDList);
 //	

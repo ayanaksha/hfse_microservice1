@@ -51,6 +51,7 @@
 		    <groupId>com.microsoft.sqlserver</groupId>
 		    <artifactId>sqljdbc41</artifactId>
 		    <version>4.1</version>
+		    
 		</dependency> 
 		
 		<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->

@@ -127,8 +127,17 @@ public class SalesController {
 	 * @param response
 	 * @return
 	 */
+	/**
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	/**
+	 * @param response
+	 * @return
+	 */
 	@PostMapping(path = "/online-sales-service/allEventRegistration")
-	public @ResponseBody ResponseEntity<?> allEventRegistration(final HttpServletRequest request,
+	public @ResponseBody ResponseEntity<?> allEventRegistration(
 			final HttpServletResponse response) {
 		ResponseEntity<?> responseEntity;
 		List<EventRegistration> eventRegistrationList = null;
@@ -138,6 +147,23 @@ public class SalesController {
 			responseEntity = new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<List<EventRegistration>>(eventRegistrationList, HttpStatus.OK);
+	}
+	
+	/**
+	 * @param response
+	 * @return
+	 */
+	@PostMapping(path = "/online-sales-service/allEventSummary")
+	public @ResponseBody ResponseEntity<?> allEventSummary(
+			final HttpServletResponse response) {
+		ResponseEntity<?> responseEntity;
+		List<EventSummary> eventSummaryList = null;
+		try {
+			eventSummaryList = eventSummaryService.retrieveAllEventSummary();
+		} catch (Exception e) {
+			responseEntity = new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<List<EventSummary>>(eventSummaryList, HttpStatus.OK);
 	}
 
 	/**

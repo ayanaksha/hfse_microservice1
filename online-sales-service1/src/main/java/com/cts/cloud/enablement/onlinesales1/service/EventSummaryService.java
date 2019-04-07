@@ -2,6 +2,7 @@ package com.cts.cloud.enablement.onlinesales1.service;
 
 import java.util.List;
 
+import com.cts.cloud.enablement.onlinesales1.domain.EventRegistration;
 import com.cts.cloud.enablement.onlinesales1.domain.EventSummary;
 
 /**
@@ -11,6 +12,8 @@ import com.cts.cloud.enablement.onlinesales1.domain.EventSummary;
 public interface EventSummaryService {
 	
 	List<EventSummary> retrieveEventByPoc(Long pocID);
+	
+	List<EventSummary> retrieveAllEventSummary();
 	
 //	List<Event> retrieveEventByLocation(String location);
 //	

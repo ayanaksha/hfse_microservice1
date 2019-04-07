@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.cts.cloud.enablement.onlinesales1.domain.EventSummary;
 import com.cts.cloud.enablement.onlinesales1.domain.ActiveDirectory;
+import com.cts.cloud.enablement.onlinesales1.domain.EventRegistration;
 import com.cts.cloud.enablement.onlinesales1.repository.EventSummaryRepository;
 import com.cts.cloud.enablement.onlinesales1.repository.ActiveDirectoryRepository;
 
@@ -70,6 +71,11 @@ public class EventSummaryServiceImpl implements EventSummaryService {
 		event.setLivesTouched(eventSummary.getLivesTouched());
 		eventSummaryRepository.save(event);
 		return eventSummaryRepository.findByEventID(eventID);
+	}
+	
+	@Override
+	public List<EventSummary> retrieveAllEventSummary() {
+		return eventSummaryRepository.findAll();
 	}
 	
 //	@Override
